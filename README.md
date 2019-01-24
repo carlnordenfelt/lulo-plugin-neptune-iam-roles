@@ -13,7 +13,7 @@ The plugin associates an IAM ROle with a Neptune cluster which is useful when yo
 $ npm install lulo-plugin-neptune-iam-roles --save
 ```
 
-##Usage
+## Usage
 ### Properties
 * `DBClusterIdentifier`: The Neptune Cluster Identifier. Required
 * `RoleArn`: The IAM Role arn. Required
