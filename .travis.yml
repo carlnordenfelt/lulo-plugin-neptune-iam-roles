@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "node"
+  # - "node" Temporarily disabled due to nyc issue
   - "lts/*"
   - "8"
   - "6"
