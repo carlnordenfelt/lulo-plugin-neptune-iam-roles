@@ -1,12 +1,12 @@
 # lulo neptune iam roles
 
+lulo neptune iam roles is a plugin for lulo.
+The plugin associates an IAM ROle with a Neptune cluster which is useful when you want to use the Loader API for example.
+
 [![npm version](https://badge.fury.io/js/lulo-plugin-neptune-iam-roles.svg)](https://badge.fury.io/js/lulo-plugin-neptune-iam-roles)
 [![Build Status](https://travis-ci.org/carlnordenfelt/lulo-plugin-neptune-iam-roles.svg?branch=master)](https://travis-ci.org/carlnordenfelt/lulo-plugin-neptune-iam-roles)
 [![Coverage Status](https://coveralls.io/repos/github/carlnordenfelt/lulo-plugin-neptune-iam-roles/badge.svg?branch=master)](https://coveralls.io/github/carlnordenfelt/lulo-plugin-neptune-iam-roles?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/carlnordenfelt/lulo-plugin-neptune-iam-roles/badge.svg?targetFile=package.json)](https://snyk.io/test/github/carlnordenfelt/lulo-plugin-neptune-iam-roles?targetFile=package.json)
-
-lulo neptune iam roles is a plugin for lulo.
-The plugin associates an IAM ROle with a Neptune cluster which is useful when you want to use the Loader API for example.
 
 # Installation
 ```
