@@ -54,5 +54,13 @@ function delete_(input, callback) {
         DBClusterIdentifier: input.DBClusterIdentifier,
         RoleArn: input.RoleArn
     };
-    neptune.removeRoleFromDBCluster(params, callback);
+    neptune.removeRoleFromDBCluster(params, function (error) {
+        if (error) {
+            if (error.code === 'DBClusterRoleNotFound') {
+                return callback();
+            }
+        }
+
+        return callback(error);
+    });
 }

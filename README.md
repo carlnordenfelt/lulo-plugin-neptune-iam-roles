@@ -23,15 +23,14 @@ N/A
 
 ### Required IAM Permissions
 The Custom Resource Lambda requires the following permissions for this plugin to work:
-```
-{
-   "Effect": "Allow",
-   "Action": [
-       "rds:AddRoleToDBCluster",
-       "rds:RemoveRoleFromDBCluster"
-   ],
-   "Resource": "*"
-}
+```yaml
+Statment:
+  - Effect: 'Allow'
+    Action:
+      - 'rds:AddRoleToDBCluster'
+      - 'rds:RemoveRoleFromDBCluster'
+      - 'iam:PassRole' 
+    Resource: '*'
 ```
 
 ## License
