@@ -150,5 +150,25 @@ describe('Index unit tests', function () {
                 done();
             });
         });
+        it('should not delete due to missing property DBClusterIdentifier', function (done) {
+            delete event.ResourceProperties.DBClusterIdentifier;
+            subject.delete(event, {}, function (error, response) {
+                expect(error).to.equal(undefined);
+                expect(response).to.equal(undefined);
+                expect(addRoleToDBClusterStub.called).to.equal(false);
+                expect(removeRoleFromDBClusterStub.called).to.equal(false);
+                done();
+            });
+        });
+        it('should not delete due to missing property RoleArn', function (done) {
+            delete event.ResourceProperties.RoleArn;
+            subject.delete(event, {}, function (error, response) {
+                expect(error).to.equal(undefined);
+                expect(response).to.equal(undefined);
+                expect(addRoleToDBClusterStub.called).to.equal(false);
+                expect(removeRoleFromDBClusterStub.called).to.equal(false);
+                done();
+            });
+        });
     });
 });
