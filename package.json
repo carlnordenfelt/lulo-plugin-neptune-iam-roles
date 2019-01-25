@@ -1,6 +1,6 @@
 {
   "name": "lulo-plugin-neptune-iam-roles",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "scripts": {
     "clean": "rm -rf node_modules",
     "lint": "node_modules/.bin/eslint --max-warnings 0 src tests",
