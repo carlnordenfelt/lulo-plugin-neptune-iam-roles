@@ -21,6 +21,10 @@ pub.create = function (event, _context, callback) {
 };
 
 pub.delete = function (event, _context, callback) {
+    if (!event.ResourceProperties.DBClusterIdentifier || !event.ResourceProperties.RoleArn) {
+        return callback();
+    }
+
     delete_(event.ResourceProperties, callback);
 };
 
