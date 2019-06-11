@@ -1,4 +1,4 @@
-const aws = require('aws-sdk');
+const aws     = require('aws-sdk');
 const neptune = new aws.Neptune({apiVersion: '2014-10-31'});
 
 const pub = {};
@@ -56,7 +56,7 @@ function delete_(input, callback) {
     };
     neptune.removeRoleFromDBCluster(params, function (error) {
         if (error) {
-            if (error.code === 'DBClusterRoleNotFound') {
+            if (error.code === 'DBClusterRoleNotFound' || error.code === 'DBClusterNotFoundFault') {
                 return callback();
             }
         }

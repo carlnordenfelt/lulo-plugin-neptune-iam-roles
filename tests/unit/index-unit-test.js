@@ -160,6 +160,16 @@ describe('Index unit tests', function () {
                 done();
             });
         });
+        it('should not fail due to DBClusterNotFoundFault error', function (done) {
+            removeRoleFromDBClusterStub.yields({ code: 'DBClusterNotFoundFault' });
+            subject.delete(event, {}, function (error, response) {
+                expect(error).to.equal(undefined);
+                expect(response).to.equal(undefined);
+                expect(addRoleToDBClusterStub.called).to.equal(false);
+                expect(removeRoleFromDBClusterStub.calledOnce).to.equal(true);
+                done();
+            });
+        });
         it('should not delete due to missing property DBClusterIdentifier', function (done) {
             delete event.ResourceProperties.DBClusterIdentifier;
             subject.delete(event, {}, function (error, response) {
